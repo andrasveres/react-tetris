@@ -48,13 +48,15 @@ export default class Tetris extends React.Component {
     const { children } = this.props;
     const { points, linesCleared } = this.state;
 
+    let a = 99;
+
     return children({
       HeldPiece,
       Gameboard,
       PieceQueue,
       points,
       linesCleared,
-      ScoreStore
+      a
     });
   }
 }
