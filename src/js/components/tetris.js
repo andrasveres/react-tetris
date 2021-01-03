@@ -44,7 +44,8 @@ export default class Tetris extends React.Component {
       Gameboard,
       PieceQueue,
       points,
-      linesCleared
+      linesCleared,
+      ScoreStore
     });
   }
 }
