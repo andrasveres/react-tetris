@@ -21,7 +21,16 @@ export default class Tetris extends React.Component {
   constructor(props) {
     super(props);
     this.state = getScore();
+
+    console.log("--------------------------------------");
+    console.log("--------------------------------------");
+    console.log("--------------------------------------");
+    console.log("--------------------------------------");
+    console.log("--------------------------------------");
+    console.log("--------------------------------------");
+
   }
+
 
   componentDidMount() {
     ScoreStore.addChangeListener(this._onChange);
