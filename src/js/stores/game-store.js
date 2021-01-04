@@ -45,7 +45,7 @@ const GameStore = _.extend(
       if (_currentState !== states.LOST) {
         _interval = global.setInterval(() => {
           PieceStore.tick();
-        }, 800);
+        }, 200);
         _currentState = states.PLAYING;
         this.emitChange();
       }
