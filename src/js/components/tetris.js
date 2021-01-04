@@ -6,6 +6,9 @@ import ScoreStore from '../stores/score-store';
 import HeldPiece from './held-piece';
 import PieceQueue from './piece-queue';
 
+//AA
+import GameStore from '../stores/game-store';
+
 function getScore() {
   return {
     points: ScoreStore.getPoints(),
@@ -28,18 +31,28 @@ export default class Tetris extends React.Component {
     console.log("--------------------------------------");
     console.log("--------------------------------------");
     console.log("--------------------------------------");
-    console.log("++++++++++++++++22++++++++++++++++++++++")
+    console.log("++++++++++++++++33++++++++++++++++++++++")
 
   }
 
 
   componentDidMount() {
     ScoreStore.addChangeListener(this._onChange);
+
+    //
+    BoardStore.addChangeListener(this._onBoardChange);
+
   }
 
   componentWillUnmount() {
     ScoreStore.removeChangeListener(this._onChange);
   }
+
+  _onBoardChange = () => {
+
+    console.log("OnBOARDCHANGE");
+
+  };
 
   _onChange = () => {
 
