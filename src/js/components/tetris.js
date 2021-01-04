@@ -7,7 +7,7 @@ import HeldPiece from './held-piece';
 import PieceQueue from './piece-queue';
 
 //AA
-import GameStore from '../stores/game-store';
+import BoardStore from '../stores/board-store';
 
 function getScore() {
   return {
