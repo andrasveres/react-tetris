@@ -48,15 +48,16 @@ export default class Tetris extends React.Component {
     ScoreStore.removeChangeListener(this._onChange);
   }
 
+  //AA
   _onBoardChange = () => {
 
-    console.log("OnBOARDCHANGE");
+    console.log("OnBOARDCHANGE"+BoardStore.getBoard());
 
   };
 
   _onChange = () => {
 
-    console.log("OnCHANGE"+ScoreStore.getScore());
+    console.log("OnCHANGE");
 
     this.setState(getScore());
   };
