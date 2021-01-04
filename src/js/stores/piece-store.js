@@ -149,7 +149,7 @@ const PieceStore = _.extend(
           break;
 
         case actions.MOVE_RIGHT:
-          emitChangeIf(_moveRight());
+          //emitChangeIf(_moveRight());
           break;
 
         case actions.HARD_DROP:
