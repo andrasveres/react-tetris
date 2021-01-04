@@ -8,6 +8,7 @@ import PieceQueue from './piece-queue';
 
 //AA
 import BoardStore from '../stores/board-store';
+import GameStore from '../stores/game-store';
 
 function getScore() {
   return {
@@ -31,7 +32,7 @@ export default class Tetris extends React.Component {
     console.log("--------------------------------------");
     console.log("--------------------------------------");
     console.log("--------------------------------------");
-    console.log("++++++++++++++++44++++++++++++++++++++++")
+    console.log("++++++++++++++++55++++++++++++++++++++++")
 
   }
 
@@ -40,7 +41,8 @@ export default class Tetris extends React.Component {
     ScoreStore.addChangeListener(this._onChange);
 
     //
-    BoardStore.addChangeListener(this._onBoardChange);
+    // BoardStore.addChangeListener(this._onBoardChange);
+    GameStore.addChangeListener(this._onGameChange);
 
   }
 
@@ -54,6 +56,20 @@ export default class Tetris extends React.Component {
     console.log("TETRIS OnBOARDCHANGE");
 
     this.props.onBoardChange(BoardStore.getBoard());
+
+  };
+
+  //AA
+  _onGameChange = () => {
+
+    console.log("TETRIS OnGAMECHANGE");
+
+    const ret = {
+      board: GameStore.getGameBoard(),
+      status: GameStore.getCurrentState()
+    }
+
+    this.props.onGameChange(ret);
 
   };
 
