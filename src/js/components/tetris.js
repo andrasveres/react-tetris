@@ -31,7 +31,7 @@ export default class Tetris extends React.Component {
     console.log("--------------------------------------");
     console.log("--------------------------------------");
     console.log("--------------------------------------");
-    console.log("++++++++++++++++33++++++++++++++++++++++")
+    console.log("++++++++++++++++44++++++++++++++++++++++")
 
   }
 
@@ -51,7 +51,9 @@ export default class Tetris extends React.Component {
   //AA
   _onBoardChange = () => {
 
-    console.log("OnBOARDCHANGE"+BoardStore.getBoard());
+    console.log("TETRIS OnBOARDCHANGE");
+
+    this.props.onBoardChange(BoardStore.getBoard());
 
   };
 
