@@ -152,13 +152,13 @@ const PieceStore = _.extend(
           break;
 
         case actions.MOVE_LEFT:
-          if(skip<=0) emitChangeIf(_moveLeft());
-          else skip --;
+          if(_skip<=0) emitChangeIf(_moveLeft());
+          else _skip --;
           break;
 
         case actions.MOVE_RIGHT:
-          if(skip<=0) emitChangeIf(_moveRight());
-          else skip --;
+          if(_skip<=0) emitChangeIf(_moveRight());
+          else _skip --;
           break;
 
         case actions.HARD_DROP:
