@@ -9,6 +9,7 @@ import PieceQueue from './piece-queue';
 //AA
 import BoardStore from '../stores/board-store';
 import GameStore from '../stores/game-store';
+import PieceStore from '../stores/piece-store';
 
 function getScore() {
   return {
@@ -61,6 +62,10 @@ export default class Tetris extends React.Component {
 
   changeSpeed(speed) {
     GameStore.changeSpeed(speed);
+  }
+
+  skip(s) {
+    PieceStore.skip(s);
   }
 
   //AA

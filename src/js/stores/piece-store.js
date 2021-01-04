@@ -14,6 +14,9 @@ let _position;
 let _heldPiece;
 let _hasHeldPiece;
 
+//AA
+let _skip=0;
+
 function _moveLeft() {
   // compute new position
   const newPosition = _.clone(_position);
@@ -137,6 +140,10 @@ const PieceStore = _.extend(
       emitChangeIf(_moveDown());
     },
 
+    skip(s) {
+      _skip = s;
+    },
+
     dispatcherIndex: AppDispatcher.register((payload) => {
       const { action } = payload; // this is our action from handleViewAction
       switch (action.actionType) {
@@ -145,11 +152,13 @@ const PieceStore = _.extend(
           break;
 
         case actions.MOVE_LEFT:
-          emitChangeIf(_moveLeft());
+          if(skip<=0) emitChangeIf(_moveLeft());
+          else skip --;
           break;
 
         case actions.MOVE_RIGHT:
-          //emitChangeIf(_moveRight());
+          if(skip<=0) emitChangeIf(_moveRight());
+          else skip --;
           break;
 
         case actions.HARD_DROP:
