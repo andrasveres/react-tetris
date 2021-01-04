@@ -59,6 +59,10 @@ export default class Tetris extends React.Component {
 
   };
 
+  changeSpeed(speed) {
+    GameStore.changeSpeed(speed);
+  }
+
   //AA
   _onGameChange = () => {
 

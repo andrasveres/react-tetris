@@ -10,6 +10,7 @@ const { states, actions, events } = AppConstants;
 
 let _currentState = null;
 let _interval = null;
+let _speed = 800;
 
 const GameStore = _.extend(
   {
@@ -43,11 +44,30 @@ const GameStore = _.extend(
 
     start() {
       if (_currentState !== states.LOST) {
+
+        _speed = 800;
+
         _interval = global.setInterval(() => {
           PieceStore.tick();
-        }, 200);
+        }, _speed);
         _currentState = states.PLAYING;
         this.emitChange();
+      }
+    },
+
+    // AA
+    changeSpeed(speed) {
+      if (_currentState === states.PLAYING) {
+
+        _speed = speed;
+
+        global.clearInterval(_interval);
+
+        _interval = global.setInterval(() => {
+          PieceStore.tick();
+        }, _speed);  
+
+        //this.emitChange();
       }
     },
 
