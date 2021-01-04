@@ -41,6 +41,9 @@ export default class Tetris extends React.Component {
   }
 
   _onChange = () => {
+
+    console.log("OnCHANGE"+ScoreStore.getScore());
+
     this.setState(getScore());
   };
 
@@ -48,13 +51,11 @@ export default class Tetris extends React.Component {
     const { children } = this.props;
     const { points, linesCleared } = this.state;
 
-    let a = 99;
-
     return children({
       HeldPiece,
       Gameboard,
       PieceQueue,
-      a,
+      points,
       linesCleared,
     });
   }
