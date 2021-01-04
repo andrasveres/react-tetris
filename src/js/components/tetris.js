@@ -28,6 +28,7 @@ export default class Tetris extends React.Component {
     console.log("--------------------------------------");
     console.log("--------------------------------------");
     console.log("--------------------------------------");
+    console.log("++++++++++++++++++++++++++++++++++++++")
 
   }
 
